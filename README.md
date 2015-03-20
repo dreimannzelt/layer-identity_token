@@ -1,5 +1,7 @@
 # Layer::IdentityToken
 
+[![Gem Version](https://badge.fury.io/rb/layer-identity_token.svg)](http://badge.fury.io/rb/layer-identity_token)
+
 Use this class to generate a token for authenticating the Layer SDK
 
 ## Installation
