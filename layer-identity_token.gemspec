@@ -1,10 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'layer/identity_token'
+require 'layer/identity_token/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "Layer::IdentityToken"
+  spec.name          = "layer-identity_token"
   spec.version       = Layer::IdentityToken::VERSION
   spec.authors       = ["we5"]
   spec.email         = ["bjoern@we5.de"]
