@@ -21,12 +21,27 @@ Or install it yourself as:
 1. Create a layer app
 2. Write down your `provider ID` (app's info tab)
 3. Create a new private key (app's authentication tab – _we recommend to create keys for each developer and/or environments like: staging, development_)
-4. Save the private key and note the `key ID`
+4. Save the `private key` and note the `key ID`
 
 ## Usage
 
 ```ruby
 token = Layer::IdentityToken.new(user_id, nonce, optional_expires_at)
+token.encode
+```
+
+### Integration
+
+If you want to return this token as JSON and your framework (like Rails) uses `#as_json` you just write a controller like:
+
+```ruby
+class ApiController
+  def hello_layer
+    token = Layer::IdentityToken.new(current_user.id, params[:nonce])
+
+    render json: token
+  end
+end
 ```
 
 ## Configuration
