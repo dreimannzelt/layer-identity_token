@@ -25,7 +25,7 @@ Or install it yourself as:
 
 ## Usage
 
-```
+```ruby
 token = Layer::IdentityToken.new(user_id, nonce, optional_expires_at)
 ```
 
@@ -37,11 +37,11 @@ Per default the class looks for ENV variables like:
 LAYER_PROVIDER_ID
 LAYER_KEY_ID
 LAYER_PRIVATE_KEY
-``
+```
 
 If you can not set ENV variables you can also set them on the class directly:
 
-```
+```ruby
 Layer::IdentityToken.layer_provider_id = "provider_id"
 Layer::IdentityToken.layer_key_id = "key_id"
 Layer::IdentityToken.layer_private_key = "private_key"
