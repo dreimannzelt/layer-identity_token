@@ -8,7 +8,7 @@ Use this class to generate a token for authenticating the Layer SDK
 
 Add this line to your application's Gemfile:
 
-    gem 'layer_identity_token'
+    gem 'layer-identity_token'
 
 And then execute:
 
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install layer_identity_token
+    $ gem install layer-identity_token
 
 ## Setup
 
