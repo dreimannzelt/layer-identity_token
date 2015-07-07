@@ -2,8 +2,6 @@ require "jwt"
 
 module Layer
   class IdentityToken
-    VERSION = "0.0.1"
-    
     class << self
       attr_writer :layer_provider_id, 
                   :layer_key_id, 
@@ -47,7 +45,7 @@ module Layer
 
     def headers
       {
-        typ: "JWS",
+        typ: "JWT",
         cty: "layer-eit;v=1",
         kid: self.class.layer_key_id
       }
