@@ -59,10 +59,12 @@ LAYER_PRIVATE_KEY
 If you can not set ENV variables you can also set them on the class directly:
 
 ```ruby
-Layer::IdentityToken.layer_provider_id = "provider_id"
-Layer::IdentityToken.layer_key_id = "key_id"
+Layer::IdentityToken.layer_provider_id = "layer:///providers/PROVIDER_ID"
+Layer::IdentityToken.layer_key_id = "layer:///keys/KEY_ID"
 Layer::IdentityToken.layer_private_key = "private_key"
 ```
+
+_The prefixes are not needed necessarily as we do some normalizing on these IDs for compatibility reasons._
 
 ## Contributing
 
