@@ -1,5 +1,7 @@
 # Layer::IdentityToken
 
+[![Join the chat at https://gitter.im/dreimannzelt/layer-identity_token](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dreimannzelt/layer-identity_token?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Gem Version](https://badge.fury.io/rb/layer-identity_token.svg)](http://badge.fury.io/rb/layer-identity_token)
 
 Use this class to generate a token for authenticating the Layer SDK
