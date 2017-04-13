@@ -20,7 +20,7 @@ module Layer
       end
     end
 
-    SUPPORTED_CLAIM_ATTRIBUTES = %w(first_name last_name display_name avatar_url)
+    SUPPORTED_CLAIM_ATTRIBUTES = %w(first_name last_name display_name avatar_url metadata)
 
     attr_reader :user_id,
                 :nonce,
