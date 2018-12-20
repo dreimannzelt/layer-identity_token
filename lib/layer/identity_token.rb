@@ -3,8 +3,8 @@ require "jwt"
 module Layer
   class IdentityToken
     class << self
-      attr_writer :layer_provider_id, 
-                  :layer_key_id, 
+      attr_writer :layer_provider_id,
+                  :layer_key_id,
                   :layer_private_key
 
       def layer_provider_id
@@ -20,14 +20,21 @@ module Layer
       end
     end
 
-    attr_reader :user_id, 
-                :nonce, 
-                :expires_at
-    
-    def initialize(user_id, nonce, expires_at = (Time.now+(86400*14)))
+    SUPPORTED_CLAIM_ATTRIBUTES = %w(first_name last_name display_name avatar_url metadata)
+
+    attr_reader :user_id,
+                :nonce,
+                :expires_at,
+                :more_claim_attributes
+
+    def initialize(user_id, nonce, expires_at = (Time.now+(86400*14)),
+                   more_claim_attributes = {})
       @user_id = user_id
       @nonce = nonce
       @expires_at = expires_at
+      @more_claim_attributes = more_claim_attributes.select do |key, _value|
+        SUPPORTED_CLAIM_ATTRIBUTES.include?(key.to_s)
+      end
     end
 
     def encode
@@ -52,13 +59,13 @@ module Layer
     end
 
     def claim
-      {
+      more_claim_attributes.merge(
         iss: self.class.layer_provider_id,
         prn: user_id.to_s,
         iat: Time.now.to_i,
         exp: expires_at.to_i,
         nce: nonce
-      }
+      )
     end
 
     def private_key

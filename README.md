@@ -46,6 +46,21 @@ class ApiController
 end
 ```
 
+### Usage with Identity attributes
+
+If you want to set some attributes on the Layer Identity, allowed attributes are: `first_name`, `last_name`, `display_name`, and `avatar_url`:
+
+```ruby
+token = Layer::IdentityToken.new(user.id, nonce, expires_at, {
+  'first_name' => user.first_name,
+  'last_name' => user.last_name,
+  'display_name' => user.display_name,
+  'avatar_url' => user.avatar_url
+})
+
+token.encode
+```
+
 ## Configuration
 
 Per default the class looks for ENV variables like:
