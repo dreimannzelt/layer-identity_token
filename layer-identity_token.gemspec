@@ -22,5 +22,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 0'
   spec.add_development_dependency 'pry', '~> 0'
 
-  spec.add_dependency 'jwt', '~> 1.4', '>= 1.4.1'
+  spec.add_dependency 'jwt', '~> 2.1', '>= 1.4.1'
 end
