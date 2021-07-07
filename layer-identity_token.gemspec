@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency 'bundler', '~> 1.3'
-  spec.add_development_dependency 'rake', '~> 0'
+  spec.add_development_dependency 'rake', '~> 13'
   spec.add_development_dependency 'pry', '~> 0'
 
   spec.add_dependency 'jwt', '~> 2.2', '>= 1.4.1'
